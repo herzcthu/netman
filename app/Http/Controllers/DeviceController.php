@@ -22,6 +22,7 @@ class DeviceController extends AppBaseController
     public function __construct(DeviceRepository $deviceRepo)
     {
         $this->middleware('auth');
+        $this->middleware('active');
         $this->deviceRepository = $deviceRepo;
         $this->nmap = new LaravelNmap(true);
     }

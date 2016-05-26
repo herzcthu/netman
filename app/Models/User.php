@@ -51,7 +51,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','active',
     ];
 
     /**
@@ -87,7 +87,7 @@ class User extends Authenticatable
         'email' => 'required|email|max:255|unique:users',
         'password' => 'required|min:6|confirmed'
     ];
-    
+       
     
     public function devices() {
         return $this->hasMany('App\Models\Device');

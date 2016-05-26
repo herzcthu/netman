@@ -24,7 +24,11 @@ class UpdateUserRequest extends Request
      * @return array
      */
     public function rules()
-    {
-        return User::$rules;
+    { 
+        return [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users,email,'.$this->route('users'),
+            'password' => 'min:6|confirmed'
+        ];
     }
 }

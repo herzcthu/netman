@@ -1,9 +1,3 @@
-<!-- Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('id', 'Id:') !!}
-    {!! Form::number('id', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- Name Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Name:') !!}
@@ -22,22 +16,16 @@
     {!! Form::password('password', ['class' => 'form-control']) !!}
 </div>
 
-<!-- Remember Token Field -->
+<!-- Password Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('remember_token', 'Remember Token:') !!}
-    {!! Form::text('remember_token', null, ['class' => 'form-control']) !!}
+    {!! Form::label('password_confirmation', 'Confirm Password:') !!}
+    {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
 </div>
 
-<!-- Created At Field -->
+<!-- Active Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('created_at', 'Created At:') !!}
-    {!! Form::date('created_at', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    {!! Form::date('updated_at', null, ['class' => 'form-control']) !!}
+    {!! Form::label('active', 'Activate:') !!}
+    {!! Form::select('active',['0' => 'Deactivate', '1' => 'Activate'], null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

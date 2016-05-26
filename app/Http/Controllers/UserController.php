@@ -18,6 +18,8 @@ class UserController extends AppBaseController
 
     public function __construct(UserRepository $userRepo)
     {
+        $this->middleware('auth');
+        $this->middleware('active');
         $this->userRepository = $userRepo;
     }
 
@@ -111,14 +113,23 @@ class UserController extends AppBaseController
     public function update($id, UpdateUserRequest $request)
     {
         $user = $this->userRepository->findWithoutFail($id);
-
+        $password = $request->only('password')['password'];
+        $confirm = $request->only('password_confirmation')['password_confirmation'];
+        
+        $input = $request->all();
+        if(empty($password) || empty($confirm)) {
+            unset ($input['password']);
+            unset ($input['password_confirmation']);
+        } else {
+            $input['password'] = bcrypt($password);
+        }
         if (empty($user)) {
             Flash::error('User not found');
 
             return redirect(route('users.index'));
         }
 
-        $user = $this->userRepository->update($request->all(), $id);
+        $user = $this->userRepository->update($input, $id);
 
         Flash::success('User updated successfully.');
 

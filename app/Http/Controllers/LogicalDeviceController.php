@@ -22,6 +22,8 @@ class LogicalDeviceController extends AppBaseController
 
     public function __construct(LogicalDeviceRepository $logicalDeviceRepo, DeviceRepository $device)
     {
+        $this->middleware('auth');
+        $this->middleware('active');
         $this->logicalDeviceRepository = $logicalDeviceRepo;
         $this->device = $device;
         $this->nmap = new LaravelNmap(true);
