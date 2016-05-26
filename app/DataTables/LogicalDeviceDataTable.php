@@ -30,7 +30,7 @@ class LogicalDeviceDataTable extends DataTable
             ->editColumn('device', function($data) {
                 if(!empty($data->device))
                     return'<a href="' . route('devices.show', [$data->device]) . '" class=\'btn btn-default btn-xs\'>'.
-                    '<i class="glyphicon glyphicon-eye-open"></i></a>';
+                    '<i class="glyphicon glyphicon-eye-open"></i>'.$data->device.'</a>';
             })
             ->addColumn('actions', function ($data) {
                             return '

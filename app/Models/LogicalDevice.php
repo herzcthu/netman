@@ -83,7 +83,7 @@ class LogicalDevice extends Model
         'os_version',
         'service',
         'nicinfo',
-        'physicaldevice',
+        'device',
         'note',
         'user_id'
     ];
@@ -102,7 +102,7 @@ class LogicalDevice extends Model
         'os_version' => 'string',
         'service' => 'string',
         'nicinfo' => 'string',
-        'physicaldevice' => 'string',
+        'device' => 'string',
         'adminuser' => 'integer',
         'note' => 'string',
         'user_id' => 'integer'

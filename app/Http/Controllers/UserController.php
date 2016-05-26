@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\UserDataTable;
-use App\Http\Requests;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Repositories\UserRepository;
@@ -143,10 +142,16 @@ class UserController extends AppBaseController
      *
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($id, \Illuminate\Http\Request $request)
     {
         $user = $this->userRepository->findWithoutFail($id);
+        $auth= $request->user();
+        if ($auth->id == $user->id) {
+            Flash::error('Cannot delete yourself');
 
+            return redirect(route('users.index'));
+        }
+        
         if (empty($user)) {
             Flash::error('User not found');
 
