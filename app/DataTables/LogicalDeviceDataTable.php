@@ -15,7 +15,7 @@ class LogicalDeviceDataTable extends DataTable
     public function ajax()
     {
         return $this->datatables
-            ->eloquent($this->query())
+            ->eloquent($this->query()->orderByRaw('LENGTH(ip),ip ASC'))
             ->editColumn('user_id', function($data) {
                 return $data->user->name;
             })

@@ -18,11 +18,11 @@ class CreateLogicalDevicesTable extends Migration
             $table->string('type');
             $table->string('username');
             $table->string('password');
-            $table->json('os');
+            $table->text('os');
             $table->string('service');
             $table->string('nicinfo');
             $table->string('device');
-            $table->json('details');
+            $table->text('details');
             $table->text('note');
             $table->integer('user_id');
             $table->timestamps();

@@ -15,7 +15,7 @@ class DeviceDataTable extends DataTable
     public function ajax()
     {
         return $this->datatables
-            ->eloquent($this->query())
+            ->eloquent($this->query()->orderByRaw('LENGTH(ip),ip ASC'))
             ->editColumn('nicinfo', function ($data) {
                 if(!empty($data->nicinfo)){
                 $nicinfo = '<ul class="list-group">';
