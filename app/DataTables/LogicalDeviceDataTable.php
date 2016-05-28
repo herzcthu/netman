@@ -108,7 +108,7 @@ class LogicalDeviceDataTable extends DataTable
             'username' => ['name' => 'username', 'data' => 'username'],
             'password' => ['name' => 'password', 'data' => 'password'],
             'os' => ['title'=>'OS'],
-            'os_version' => ['title'=>'OS Version'],
+            'os_version' => ['name'=>'os', 'title'=>'OS Version'],
             'service' => ['name' => 'service', 'data' => 'service'],
             'nicinfo' => ['name' => 'nicinfo', 'data' => 'nicinfo','title'=>'NIC Info'],
             'device' => ['name' => 'device', 'data' => 'device'],

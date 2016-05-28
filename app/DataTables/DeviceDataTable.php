@@ -120,7 +120,7 @@ class DeviceDataTable extends DataTable
             'deviceid' => ['name' => 'deviceid', 'data' => 'deviceid', 'title' => 'Device ID'],            
             'vendor' => ['name' => 'vendor', 'data' => 'vendor', 'title' => 'Vendor'],
             'os' => ['name' => 'os', 'data' => 'os', 'title' => 'OS'],
-            'os_version' => ['title' => 'OS Version'],
+            'os_version' => ['name'=>'os', 'title' => 'OS Version'],
             'rack' => ['name' => 'rack', 'data' => 'rack'],
             'nicinfo' => ['name' => 'nicinfo', 'data' => 'nicinfo', 'title' => 'NIC Info'],
             'user_id' => ['name' => 'user_id', 'data' => 'user_id', 'title' => 'User']
