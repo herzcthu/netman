@@ -62,8 +62,9 @@ class LogicalDeviceController extends AppBaseController
     {
         $input = $request->all();
         $user = $request->user();
+        // hardcode user id 
+        $input['user_id'] = isset($user->id)?$user->id:'1';
         $logicalDevice = $this->logicalDeviceRepository->create($input);
-        $user->logicalDevices()->save($logicalDevice);
         Flash::success('LogicalDevice saved successfully.');
 
         return redirect(route('logicalDevices.index'));

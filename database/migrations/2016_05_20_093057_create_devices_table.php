@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreatedevicesTable extends Migration
+class CreateDevicesTable extends Migration
 {
 
     /**
@@ -14,7 +14,7 @@ class CreatedevicesTable extends Migration
     public function up()
     {
         Schema::create('devices', function (Blueprint $table) {
-            $table->string('ip');
+            $table->string('ip')->primary();
             $table->integer('deviceid');
             $table->text('os');
             $table->integer('rack');

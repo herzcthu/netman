@@ -14,7 +14,7 @@ class CreateLogicalDevicesTable extends Migration
     public function up()
     {
         Schema::create('logical_devices', function (Blueprint $table) {
-            $table->string('ip');
+            $table->string('ip')->primary();
             $table->string('type');
             $table->string('username');
             $table->string('password');
