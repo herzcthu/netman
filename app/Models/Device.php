@@ -83,7 +83,7 @@ class Device extends Model
      * @var array
      */
     public static $rules = [
-        //'ip' => 'unique:devices'
+        'ip' => 'required|unique:devices'
     ];
     
     /**

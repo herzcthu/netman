@@ -114,7 +114,7 @@ class LogicalDevice extends Model
      * @var array
      */
     public static $rules = [
-        //'ip' => 'unique:logical_devices'
+        'ip' => 'required|unique:logical_devices'
     ];
     
     /**
