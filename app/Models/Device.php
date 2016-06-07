@@ -54,10 +54,13 @@ class Device extends Model
         'ip',
         'deviceid',
         'os',
-        'osver',
         'rack',
         'user_id',
-        'nicinfo'
+        'nicinfo',
+        'username',
+        'password',
+        'vendor',
+        'details'
     ];
 
     /**

@@ -80,7 +80,7 @@ class LogicalDevice extends Model
         'username',
         'password',
         'os',
-        'os_version',
+        'details',
         'service',
         'nicinfo',
         'device',
