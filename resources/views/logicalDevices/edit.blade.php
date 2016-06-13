@@ -12,7 +12,7 @@
 
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($logicalDevice, ['route' => ['logicalDevices.update', $logicalDevice->ip], 'method' => 'patch']) !!}
+                   {!! Form::model($logicalDevice, ['route' => ['logicalDevices.update', $logicalDevice->ip], 'method' => 'patch', 'id' => 'devices']) !!}
 
                     @include('logicalDevices.editfields')
 
