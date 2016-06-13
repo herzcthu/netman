@@ -16,6 +16,24 @@ class LogicalDeviceDataTable extends DataTable
     {
         return $this->datatables
             ->eloquent($this->query()->orderByRaw('LENGTH(ip),ip ASC'))
+                ->editColumn('nicinfo', function ($data) {
+                if(!empty($data->nicinfo)){
+                $nicinfo = '<ul class="list-group">';
+                foreach($data->nicinfo as $ifname => $info){
+                    if(!empty($info['macaddr'])){
+                    $nicinfo .= '<li class="list-group-item"><span class="badge">'.$ifname.'</span> Mac Address : '.$info['macaddr'].'</li>';
+                    }
+                    if(!empty($info['lanip'])){
+                    $nicinfo .= '<li class="list-group-item"><span class="badge">'.$ifname.'</span> Private IP : '.$info['lanip'].'</li>';
+                    }
+                    if(!empty($info['wanip'])){
+                    $nicinfo .= '<li class="list-group-item"><span class="badge">'.$ifname.'</span> Public IP : '.$info['wanip'].'</li>';
+                    }
+                }
+                $nicinfo .= '</ul>';
+                return $nicinfo;
+                }
+            })
             ->editColumn('user_id', function($data) {
                 return $data->user->name;
             })
