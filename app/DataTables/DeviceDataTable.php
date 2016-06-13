@@ -18,6 +18,7 @@ class DeviceDataTable extends DataTable
             ->eloquent($this->query()
             //->orderBy('deviceid')
             //->orderByRaw('LENGTH(ip),ip ASC'))
+                    )
             ->editColumn('nicinfo', function ($data) {
                 if(!empty($data->nicinfo)){
                 $nicinfo = '<ul class="list-group">';
