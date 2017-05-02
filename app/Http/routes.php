@@ -60,3 +60,5 @@ Route::resource('devices', 'DeviceController');
 Route::get('logicalDevices/generate',['as'=>'logicaldevices.generate','uses'=>'LogicalDeviceController@generate']);
 
 Route::resource('logicalDevices', 'LogicalDeviceController');
+
+Route::resource('phoneLists', 'PhoneListController');

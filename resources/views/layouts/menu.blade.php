@@ -10,3 +10,7 @@
     <a href="{!! route('logicalDevices.index') !!}"><i class="fa fa-edit"></i><span>LogicalDevices</span></a>
 </li>
 
+<li class="{{ Request::is('phoneLists*') ? 'active' : '' }}">
+    <a href="{!! route('phoneLists.index') !!}"><i class="fa fa-edit"></i><span>PhoneLists</span></a>
+</li>
+
